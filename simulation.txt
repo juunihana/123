@@ -1,0 +1,30 @@
+unit:
+have a lifespan of 40+- years
+first 20 years cannot be employed
+birth and death ratios depends on resources
+every day some percent of units born or die
+consume resources for money
+can be of two types: unemployed and employed
+	if employed, produce resources of building type they are assigned to with regard of skill level
+		working schedule from monday to friday 9 to 5
+		gain a building dependent skill level up each year
+		gain salary each month
+		salary is skill level dependent
+	if unemployed, consumes 20% less resources
+can be switched employment status manually
+
+building:
+produce resources of certain type, if there are any employed units
+the more units employed the more resources can produce
+have a resource max cap
+have a employees max cap
+much likely to employ units with relevant skill level
+have skill preference curve, more average employees with average salaries then unexperienced units or high-experienced units with higher salaries
+hitech builings require iron and oil to produce
+iron buildings require wood to produce
+food and water buildings require wood and stone to produce
+
+resource:
+wood, iron, food, water, oil, stone, hitech
+units can buy food and water, buildings all other types
+

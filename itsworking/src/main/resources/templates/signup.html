@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>It's working!</title>
+  <meta />
+  <meta />
+  <link type="text/css" rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<div class="centered-block main-block">
+  <ul class="menu-list" th:unless="false">
+    <li class="menu-item"><a th:href="@{/}">Blog</a></li>
+    <li class="menu-item sign-button"><a th:href="@{/signin}">Sign in</a></li>
+    <li class="menu-item sign-button"><a th:href="@{/signup}">Sign up</a></li>
+  </ul>
+  <ul class="menu-list" th:if="false">
+    <li class="menu-item"><a th:href="@{/}">Blog</a></li>
+    <li class="menu-item sign-button"><a th:href="@{/users/1}">Welcome, Username</a></li>
+  </ul>
+</div>
+<div class="centered-block main-block">
+  <div class="post-title">Sign up:</div>
+  <form class="post-form" th:action="@{/signup}" th:object="${user}" method="POST">
+    <input type="text" class="post-text-field" th:field="${user.name}" th:value="${user.name}"
+           placeholder="Username"/><br/>
+    <p class="form-error" th:if="${usernameEmptyError}">Username cannot be empty</p>
+    <p class="form-error" th:if="${usernameAlreadyTakenError}">Username is already taken</p>
+    <input type="password" class="post-text-field" th:field="${user.password}" th:value="${user.password}"
+           placeholder="Password"/><br/>
+    <input type="password" class="post-text-field" th:field="${user.passwordRepeat}" th:value="${user.passwordRepeat}"
+           placeholder="Repeat password"/><br/>
+    <p class="form-error" th:if="${passwordEmptyError}">Password cannot be empty</p>
+    <p class="form-error" th:if="${passwordsMatchError}">Passwords do not match</p>
+   <br/>
+    <button type="submit">
+      Submit
+    </button>
+  </form>
+</div>
+<div class="centered-block footer">
+  lostemanon.ru
+  <br/>no rights reserved
+</div>
+</body>
+</html>

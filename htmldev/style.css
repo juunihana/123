@@ -1,0 +1,274 @@
+:root {
+  --bg-color-main: #f9fff0;
+  --bg-color-block: #858585;
+  --bg-color-container: #dedede;
+  --bg-color-post: #c9c9c9;
+  --bg-color-hover: #ff9f59;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color-main);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.main-container {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.main-block {
+  flex: 75;
+  margin-right: 5px;
+}
+
+.side-block {
+  flex: 25;
+  margin-left: 5px;
+  background: var(--bg-color-container);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.side-search-block {
+
+  background: var(--bg-color-block);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.side-search-block form {
+  display: flex;
+  flex-direction: row;
+}
+
+.side-search-block form input {
+  padding: 3px;
+  flex: 1;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+
+}
+
+.side-search-block form button {
+  border: 0;
+  background: var(--bg-color-container);
+  margin-left: 10px;
+}
+
+.side-user-block {
+  background: var(--bg-color-block);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.side-user-profile-block {
+  display: flex;
+  flex-direction: row ;
+}
+
+.side-user-avatar {
+  margin-right: 10px;
+}
+
+.side-user-avatar img {
+  border-radius: 5px;
+}
+
+.side-user-info-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu-block .common-button {
+  margin-bottom: 5px;
+}
+
+.user-profile-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: var(--bg-color-container);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.user-profile-block {
+  display: flex;
+  flex-direction: row;
+  background: var(--bg-color-block);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.user-profile-avatar img {
+  border-radius: 5px;
+}
+
+.user-profile-info-block {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.user-profile-info {
+  margin-bottom: 10px;
+}
+
+.user-profile-friends-block, .user-profile-groups-block {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color-block);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.user-profile-friends-list, .user-profile-groups-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-profile-friends-header, .user-profile-groups-header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px black;
+  margin-bottom: 10px;
+  align-items: end;
+}
+
+.user-profile-friends-header-text, .user-profile-groups-header-text {
+  flex: 1;
+}
+
+.user-profile-friends-header-view, .user-profile-groups-header-view {
+  flex: 1;
+  text-align: right;
+}
+
+.user-profile-friend, .user-profile-group {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.user-profile-friend-avatar img, .user-profile-group-avatar img {
+  border-radius: 5px;
+}
+
+.user-profile-friend-name, .user-profile-group-name {
+  margin-left: 10px;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  background: var(--bg-color-container);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.post-background {
+  background: var(--bg-color-post);
+  border-radius: 5px;
+  padding-bottom: 5px;
+}
+
+.post-background-content {
+  background: var(--bg-color-block);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.post-user-block {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  border-bottom: solid 1px black;
+}
+
+.post-user-avatar {
+  margin-right: 10px;
+}
+
+.post-user-avatar a img {
+  border-radius: 5px;
+}
+
+.post-user-info-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.post-time-block {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+}
+
+.post-create-time {
+  margin-right: auto;
+}
+
+.post-edit-time {
+  margin-left: auto;
+}
+
+.post-content-block {}
+
+.post-footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.post-rating-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.post-upvote-block {
+
+}
+
+.post-downvote-block {
+  margin-left: 10px;
+}
+
+.post-comments-block {
+  margin-left: auto;
+}
+
+.common-button {
+  background: var(--bg-color-block);
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+  transition: 0.05s;
+}
+
+.common-button:hover {
+  background: var(--bg-color-hover);
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+}

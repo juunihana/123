@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: moncler
+  namespace: gsc-clients-automation
+  labels:
+    environment: gsc-clients-automation
+    component: moncler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      environment: gsc-clients-automation
+      component: moncler
+  template:
+    metadata:
+      labels:
+        environment: gsc-clients-automation
+        component: moncler
+    spec:
+      containers:
+      - image: gitlabru.fmlogistic.com:5000/clients_automation/moncler
+        imagePullPolicy: Always
+        name: moncler
+        ports:
+          - containerPort: 8080
+            protocol: TCP
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+      imagePullSecrets:
+        - name: gitlabru
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30

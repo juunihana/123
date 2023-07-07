@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: moncler
+  namespace: gsc-clients-automation
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /process
+spec:
+  rules:
+  - host: kube-ru.fmlogistic.com
+    http:
+      paths:
+      - path: /clientsauto/moncler
+        #pathType: Prefix
+        backend:
+          serviceName: moncler
+          servicePort: 8080

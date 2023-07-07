@@ -1,0 +1,180 @@
+
+1 кем ты хочешь
+2 какая зарплата
+3 дата увольнения
++ резюме
+на почту Ольге Горелик
+
+
+
+
+N7r666_qwpoF
+M8k666_aslkD
+M8k66aslkD - certs !!!
+N7r777_aslkD
+
+
+
+.
+…………………………………………………..
+
+атдт
+задачи: поддержка существующих приложений, разработка новых фич
+интересные задачи:
+параллельная обработка списка клиентов. раньше задача осуществлялась в один поток и занимала много времени (8+ часов). после внедрения параллельной обработки время выполнения удалось сократить до 2 часов. реализовано с помощью threadpool и completable future
+разработка системы отслеживания прогресса фоновых задач при помощи websocket и jquery
+
+гелиософт
+задачи: разработка и поддержка приложений для автоматизации генерации отчетности по входящим документам (pdf, excel и word)
+интересные задачи:
+полный цикл разработки и сопровождения приложений
+интеграция с внешними системами (Google Drive API)
+оптимизация sql запросов
+
+сбер
+задачи: разработка новых фич, исправление ошибок, имплементация бизнес логики в соответствие с аналитикой
+интересные задачи:
+оркестрация интеграций микросервисов
+покрытие документацией OpenAPI
+рефакторинг старой кодовой базы
+
+
+social network project
+______USER______
+
+user profile:
+email (mandatory)
+password hash (mandatory)
+phone number (optional)
+username (mandatory) - used for login and as a user’s url
+avatarUrl (optional) - url to cdn
+name (mandatory)
+surname (mandatory)
+middle name (optional)
+maiden surname (optional)
+brief info (optional)
+status (optional)
+age (optional)
+place (optional)
+
+user’s password history:
+user (mandatory)
+password hash (mandatory)
+time added (mandatry)
+
+user’s avatars:
+user (mandatory)
+user image (mandatory)
+is deleted (mandatory) - default false
+
+user’s images:
+caption (optional)
+user (mandatory)
+cdn url (mandatory)
+is deleted (mandatory) - default false
+
+user’s videos:
+caption (optional)
+user (mandatory)
+cdn url (mandatory)
+is deleted (mandatory) - default false
+
+user’s audios:
+caption (optional)
+user (mandatory)
+cdn url (mandatory)
+is deleted (mandatory) - default false
+
+user’s friends:
+user (mandatory)
+friend user (mandatory)
+
+friends requests:
+sender user (mandatory)
+recepient user (mandatory)
+message (optional)
+time created (mandatory)
+time decided (optional)
+time removed (optional)
+status (mandatory) - accepted, declined, pending, removed
+
+post:
+title (optional)
+content (mandatory)         // - images are embedded as a template, resolved on backend and substituted with links to cdn DEPRECATED
+time created (mandatory) - unix format
+time edited (optional)       // - default to time created, if equals then do not show DEPRECATED
+author (mandatory) - user who wrote post
+is deleted (optional)
+group (optional)
+
+post images:
+post (mandatory)
+user’s image (mandatory)
+is deleted (optional)
+
+messages:
+sender user (mandatory)
+recepient user (mandatory)
+time sent (mandatory)
+content (mandatory)
+
+message user images:
+message (mandatory)
+user’s image (mandatory)
+
+message images:
+message (mandatory)
+cdn url (mandatory)
+
+message videos:
+message (mandatory)
+cdn url (mandatory)
+
+message audios:
+message (mandatory)
+cdn url (mandatory)
+
+groups:
+name (mandatory)
+info (mandatory)
+time created (mandatory)
+
+users groups:
+group (mandatory)
+time joined (mandatory)
+time left (optional)
+
+
+______CDN______
+
+cdn image:
+image data (mandatory)
+name (mandatory)
+uploader (mandatory)
+time uploaded (mandatory)
+
+cdn video:
+video data (mandatory)
+name (mandatory)
+uploader (mandatory)
+time uploaded (mandatory)
+
+cdn audio
+audio data (mandatory)
+name (mandatory)
+uploader (mandatory)
+time uploaded (mandatory)
+
+
+ideas for java projects
+encyclopedia
+bulleting board
+task tracker like jira
+marketplace
+social network
+
+
+
+@Savchak1 в телегу)
+
+

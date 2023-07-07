@@ -1,0 +1,28 @@
+kind: Ingress
+#apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: ing-moncler
+  namespace: gsc-clients-automation
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /process
+spec:
+  ingressClassName: nginx
+
+  #tls:
+  #- hosts:
+  #  - k8s-ru.fmlogistic.com
+  #  secretName: secret-tls
+
+  rules:
+  - host: k8s-ru.fmlogistic.com
+    http:
+      paths:
+
+      - path: /clientsauto/moncler
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-moncler
+            port:
+              number: 8080

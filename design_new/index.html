@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ysabeau">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fdfdfd;
+      font-size: 1.05em;
+      font-family: Ysabeau, Arial, sans-serif;
+      color: #222;
+    }
+
+    img {
+      border-radius: 3px;
+    }
+
+    .main-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 2.5em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: #eaeaea;
+      padding: 1em;
+    }
+
+    .main-header nav, .main-header .auth-block {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .main-header .auth-block {
+      margin-left: auto;
+    }
+
+    .main-menu-element, .search-bar, .auth-block-element {
+      margin-right: 1.5em;
+    }
+
+    .root-container {
+      width: 95%;
+      max-width: 95%;
+      margin: 4em auto;
+      display: grid;
+      grid-column-gap: 2em;
+      grid-template-columns: 1fr 3fr;
+    }
+
+    .user-profile-container, .user-posts-container {
+      display: flex;
+      flex-direction: column;
+      height: 1vh;
+    }
+
+    .user-profile-container {
+    }
+
+    .user-posts-container {
+    }
+
+    .general-block {
+      background: #eaeaea;
+      border-radius: 3px;
+      padding: 1em;
+      margin-bottom: 1em;
+    }
+
+    .user-profile-info-block,
+    .user-post-block,
+    .user-profile-friends-block,
+    .user-profile-groups-block,
+    .user-profile-photos-block,
+    .user-profile-photos-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .user-profile-photos-block main {
+      display: grid;
+      grid-row-gap: 1em;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .user-profile-photo, .user-profile-avatar {
+      text-align: center;
+    }
+
+    .search-bar input {
+      outline: none;
+      border: none;
+      /*border: solid 1px #888;*/
+      border-radius: 3px;
+      padding: 0.1em 0.3em 0.1em 0.3em;
+      font-size: 1em;
+      font-family: Ysabeau, Arial, sans-serif;
+      vertical-align: center;
+    }
+
+    h1 {
+      font-size: 1.6em;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    .block-header {
+      margin-bottom: 1em;
+      border-bottom: solid 1px #222;
+    }
+
+    .photo-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(22, 22, 22, 0.9);
+    }
+
+    .photo-container {
+      width: 90%;
+      max-width: 90%;
+      height: 100%;
+      margin: auto;
+      background: #fdfdfd;
+    }
+  </style>
+</head>
+<body>
+<header class="main-header">
+  <div class="search-bar">
+    <input type="text" placeholder="Search">
+  </div>
+  <nav>
+    <div class="main-menu-element">
+      My profile
+    </div>
+    <div class="main-menu-element">
+      Friends
+    </div>
+    <div class="main-menu-element">
+      Groups
+    </div>
+    <div class="main-menu-element">
+      Photos
+    </div>
+    <div class="main-menu-element">
+      Music
+    </div>
+    <div class="main-menu-element">
+      Videos
+    </div>
+    <div class="main-menu-element">
+      Settings
+    </div>
+  </nav>
+  <div class="auth-block">
+    <div class="auth-block-element">
+      Sign in
+    </div>
+    <div class="auth-block-element">
+      Sign up
+    </div>
+  </div>
+</header>
+<div class="photo-overlay">
+  <div class="photo-container">
+  </div>
+</div>
+<main class="root-container">
+  <div class="user-profile-container">
+    <div class="user-profile-info-block general-block">
+      <div class="user-profile-avatar">
+        <img src="avatar_200.png"/>
+      </div>
+      <div class="user-profile-name">
+        <h1>Name Surname</h1>
+      </div>
+      <div class="user-profile-age">
+        <h2>25 years</h2>
+      </div>
+      <div class="user-profile-place">
+        <h3>Moscow</h3>
+      </div>
+    </div>
+    <div class="user-profile-friends-block general-block">
+      <header class="block-header"><h3>Friends</h3></header>
+      <main>
+        <div class="user-profile-friend">
+          friend
+        </div>
+        <div class="user-profile-friend">
+          friend
+        </div>
+        <div class="user-profile-friend">
+          friend
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <div class="user-profile-groups-block general-block">
+      <header class="block-header"><h3>Groups</h3></header>
+      <main>
+        <div class="user-profile-group">
+          group
+        </div>
+        <div class="user-profile-group">
+          group
+        </div>
+        <div class="user-profile-group">
+          group
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <div class="user-profile-photos-block general-block">
+      <header class="block-header"><h3>Photos</h3></header>
+      <main>
+        <div class="user-profile-photo">
+          <img src="avatar_48.png" width="96" height="96"/>
+        </div>
+        <div class="user-profile-photo">
+          <img src="avatar_48.png" width="96" height="96"/>
+        </div>
+        <div class="user-profile-photo">
+          <img src="avatar_48.png" width="96" height="96"/>
+        </div>
+        <div class="user-profile-photo">
+          <img src="avatar_48.png" width="96" height="96"/>
+        </div>
+        <div class="user-profile-photo">
+          <img src="avatar_48.png" width="96" height="96"/>
+        </div>
+        <div class="user-profile-photo">
+          <img src="avatar_48.png" width="96" height="96"/>
+        </div>
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+  </div>
+  <div class="user-posts-container">
+    <div class="user-post-block general-block">
+      <header class="block-header"><h3>Title</h3></header>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+    <footer>
+      You have reached the end of the page. Congrats!
+    </footer>
+  </div>
+</main>
+</body>
+</html>

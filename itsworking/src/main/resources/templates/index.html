@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>It's working!</title>
+  <meta />
+  <meta />
+  <link type="text/css" rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<div class="centered-block main-block">
+  <ul class="menu-list" th:unless="false">
+    <li class="menu-item"><a th:href="@{/}">Blog</a></li>
+    <li class="menu-item sign-button"><a th:href="@{/signin}">Sign in</a></li>
+    <li class="menu-item sign-button"><a th:href="@{/signup}">Sign up</a></li>
+  </ul>
+  <ul class="menu-list" th:if="false">
+    <li class="menu-item"><a th:href="@{/}">Blog</a></li>
+    <li class="menu-item sign-button"><a th:href="@{/users/1}">Welcome, Username</a></li>
+  </ul>
+</div>
+<div class="centered-block main-block" th:each="post : ${posts}">
+  <div class="post-header">
+    <div class="post-title">
+      <a th:href="@{/posts/{postId}(postId = ${post.id})}" th:text="${post.title}"></a>
+    </div>
+    <div class="post-author">
+      <a th:href="@{/users/{userId}(userId = ${post.authorId})}" th:text="${post.author}"></a>
+    </div>
+  </div>
+  <div class="post-content" th:text="${post.content}"></div>
+  <div class="post-time" th:text="${#temporals.format(post.createTime, 'MMM dd, yyyy HH:mm:ss', new java.util.Locale('en', 'US'))}"></div>
+</div>
+<div class="centered-block main-block">
+  <div class="post-title">Write a post:</div>
+  <form class="post-form" th:action="@{/createPost}" th:object="${newPost}" method="POST">
+    <input class="post-text-field" th:field="${newPost.title}" th:value="${newPost.title}"
+           placeholder="Title..."/><br/>
+    <p class="form-error" th:if="${emptyTitleError}">Title cannot be empty</p>
+    <textarea class="post-text-field" th:field="${newPost.content}" th:value="${newPost.content}"
+              cols="40" rows="12" placeholder="What do you want to write about?"></textarea><br/>
+    <p class="form-error" th:if="${postEmptyError}">Text cannot be empty</p>
+    <button type="submit">
+      Submit
+    </button>
+  </form>
+</div>
+<div class="centered-block footer">
+  lostemanon.ru
+  <br/>no rights reserved
+</div>
+</body>
+</html>
